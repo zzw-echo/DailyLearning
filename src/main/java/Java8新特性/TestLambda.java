@@ -1,3 +1,5 @@
+package Java8新特性;
+
 import org.junit.Test;
 
 import java.util.Comparator;
