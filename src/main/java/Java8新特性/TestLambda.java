@@ -29,5 +29,10 @@ public class TestLambda {
         Comparator<Integer> com = Integer::compare;
         TreeSet<Integer> ts = new TreeSet<>(com);
     }
+
+
+
+
+
 }
 
