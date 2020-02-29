@@ -113,9 +113,17 @@ public class TestLambda {
         for (Employee employee : list) {
             System.out.println(employee);
         }
+        list.forEach(employee -> System.out.println(employee));
+        list.forEach(System.out::println);
     }
 
+    //优化方式三：lambda表达式
+    @Test
+    public void test7() {
+        List<Employee> list = filterEmployee(employees, employee -> employee.getSalary() < 400);
+        list.forEach(System.out::println);
 
+    }
 
 
 }
