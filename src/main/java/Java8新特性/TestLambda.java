@@ -2,10 +2,7 @@ package Java8新特性;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Created by zhangzewen on 2020/2/27
@@ -34,17 +31,31 @@ public class TestLambda {
 
     //需求：获取年龄大于35的员工信息
     List<Employee> employees = Arrays.asList(
-            new Employee("张三",18,111.11),
-            new Employee("李四",19,222.22),
-            new Employee("王五",20,333.33),
-            new Employee("赵六",21,444.44),
-            new Employee("田七",22,555.55)
+            new Employee("张三", 18, 111.11),
+            new Employee("李四", 35, 222.22),
+            new Employee("王五", 36, 333.33),
+            new Employee("赵六", 45, 444.44),
+            new Employee("田七", 66, 555.55)
     );
 
-    Employee e = new Employee("张三",18,111.11)
+    public List<Employee> filterEmployees(List<Employee> emps) {
+        List<Employee> filterEmps = new ArrayList<>();
+        for (Employee emp : emps) {
+            if (emp.getAge() > 35) {
+                filterEmps.add(emp);
+            }
+        }
+        return filterEmps;
+    }
 
 
+    public static void main(String[] args) {
+        Employee e = new Employee("张三", 18, 111.11);
+        e.getName();
+        Employee employee = new Employee();
 
+
+    }
 
 
 }
