@@ -39,7 +39,7 @@ public class TestLambda {
     );
 
     @Test
-    public void test3(){
+    public void test3() {
         List<Employee> list = filterEmployees(employees);
         for (Employee employee : list) {
             System.out.println(employee);
@@ -68,52 +68,52 @@ public class TestLambda {
         return filterEmps;
     }
 
-    //优化方式一
+    //优化方式一：策略模式
 
     @Test
-    public void test4(){
+    public void test4() {
         List<Employee> list = filterEmployee(employees, new FilterEmployeeByAge());
         for (Employee employee : list) {
             System.out.println(employee);
         }
         System.out.println("-------------------------");
-        List<Employee> list1 = filterEmployee(employees, new FilterEmployeeBySalary());
-        for (Employee employee : list1) {
+        List<Employee> list2 = filterEmployee(employees, new FilterEmployeeBySalary());
+        for (Employee employee : list2) {
             System.out.println(employee);
         }
     }
 
     @Test
-    public void test5(){
+    public void test5() {
         List<Employee> list = filterEmployee(employees, new FilterEmployeeBySalary());
         for (Employee employee : list) {
             System.out.println(employee);
         }
     }
 
-    public List<Employee> filterEmployee(List<Employee> list, MyPredicate<Employee> myPredicate){
+    public List<Employee> filterEmployee(List<Employee> list, MyPredicate<Employee> myPredicate) {
         List emps = new ArrayList();
         for (Employee employee : list) {
-            if (myPredicate.test(employee)){
+            if (myPredicate.test(employee)) {
                 emps.add(employee);
             }
         }
         return emps;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // 优化方式二：匿名内部类
+    @Test
+    public void test6() {
+        List<Employee> list = filterEmployee(employees, new MyPredicate<Employee>() {
+            @Override
+            public boolean test(Employee employee) {
+                return employee.getSalary() < 400;
+            }
+        });
+        for (Employee employee : list) {
+            System.out.println(employee);
+        }
+    }
 
 
 
