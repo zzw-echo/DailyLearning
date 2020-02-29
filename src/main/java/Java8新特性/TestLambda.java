@@ -57,6 +57,24 @@ public class TestLambda {
         return filterEmps;
     }
 
+    //需求：获取工资大于400的员工信息
+    public List<Employee> filterEmployees2(List<Employee> emps) {
+        List<Employee> filterEmps = new ArrayList<>();
+        for (Employee emp : emps) {
+            if (emp.getSalary() > 400) {
+                filterEmps.add(emp);
+            }
+        }
+        return filterEmps;
+    }
+
+
+
+
+
+
+
+
 
 
 
