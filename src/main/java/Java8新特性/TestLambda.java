@@ -29,7 +29,7 @@ public class TestLambda {
         TreeSet<Integer> ts = new TreeSet<>(com);
     }
 
-    //需求：获取年龄大于35的员工信息
+
     List<Employee> employees = Arrays.asList(
             new Employee("张三", 18, 111.11),
             new Employee("李四", 35, 222.22),
@@ -38,6 +38,15 @@ public class TestLambda {
             new Employee("田七", 66, 555.55)
     );
 
+    @Test
+    public void test3(){
+        List<Employee> list = filterEmployees(employees);
+        for (Employee employee : list) {
+            System.out.println(employee);
+        }
+    }
+
+    //需求：获取年龄大于35的员工信息
     public List<Employee> filterEmployees(List<Employee> emps) {
         List<Employee> filterEmps = new ArrayList<>();
         for (Employee emp : emps) {
@@ -47,6 +56,12 @@ public class TestLambda {
         }
         return filterEmps;
     }
+
+
+
+
+
+
 
 
     public static void main(String[] args) {
