@@ -125,6 +125,21 @@ public class TestLambda {
 
     }
 
+    //优化方式4：stream
+    @Test
+    public void test8() {
+        employees.stream()
+                .filter(employee -> employee.getSalary() < 400)
+                .limit(2)
+                .forEach(System.out::println);
+
+        System.out.println("--------------------------");
+        employees.stream()
+                .map(Employee::getName)
+                .forEach(System.out::println);
+
+    }
+
 
 }
 
