@@ -68,27 +68,54 @@ public class TestLambda {
         return filterEmps;
     }
 
+    //优化方式一
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public static void main(String[] args) {
-        Employee e = new Employee("张三", 18, 111.11);
-        e.getName();
-        Employee employee = new Employee();
-
-
+    @Test
+    public void test4(){
+        List<Employee> list = filterEmployee(employees, new FilterEmployeeByAge());
+        for (Employee employee : list) {
+            System.out.println(employee);
+        }
+        System.out.println("-------------------------");
+        List<Employee> list1 = filterEmployee(employees, new FilterEmployeeBySalary());
+        for (Employee employee : list1) {
+            System.out.println(employee);
+        }
     }
+
+    @Test
+    public void test5(){
+        List<Employee> list = filterEmployee(employees, new FilterEmployeeBySalary());
+        for (Employee employee : list) {
+            System.out.println(employee);
+        }
+    }
+
+    public List<Employee> filterEmployee(List<Employee> list, MyPredicate<Employee> myPredicate){
+        List emps = new ArrayList();
+        for (Employee employee : list) {
+            if (myPredicate.test(employee)){
+                emps.add(employee);
+            }
+        }
+        return emps;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
