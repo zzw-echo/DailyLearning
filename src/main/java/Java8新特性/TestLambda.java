@@ -137,7 +137,6 @@ public class TestLambda {
         employees.stream()
                 .map(Employee::getName)
                 .forEach(System.out::println);
-
     }
 }
 
