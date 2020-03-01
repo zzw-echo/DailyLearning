@@ -139,7 +139,5 @@ public class TestLambda {
                 .forEach(System.out::println);
 
     }
-
-
 }
 
