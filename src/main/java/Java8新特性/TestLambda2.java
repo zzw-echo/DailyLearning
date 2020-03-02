@@ -21,6 +21,20 @@ import java.util.function.Consumer;
  * (x) -> System.out.println("hello Lambda2!")
  * <p>
  * 语法格式三：有两个以上的参数，有返回值，Lambda 体中有多条语句
+ * Comparator<Integer> com = (x, y) -> {
+ * System.out.println("Compare Lambda! ");
+ * return Integer.compare(x, y);
+ * };
+ * <p>
+ * 语法格式四：若Lambda 体中只有一条语句，return 和 {} 都可以省略不写
+ * Comparator<Integer> com = (x, y) -> Integer.compare(x, y);
+ * <p>
+ * 语法格式五：类型推断，参数列表的数据类型可以省略，因为JVM编译器通过上下文推断
+ * <p>
+ * <p>
+ * 二、Lambda 表达式需要函数式接口的支持
+ * 接口中只有一个抽象方法
+ * 可以用@FunctionalInterface 修饰，检查是否为函数式接口
  */
 public class TestLambda2 {
 
@@ -52,6 +66,12 @@ public class TestLambda2 {
             System.out.println("Compare Lambda! ");
             return Integer.compare(x, y);
         };
+    }
+
+    @Test
+    public void test4() {
+        Comparator<Integer> com = (x, y) -> Integer.compare(x, y);
+//        Comparator<Integer> com = Comparator.comparingInt(x -> x);
     }
 
 }
