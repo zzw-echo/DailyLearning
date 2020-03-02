@@ -74,4 +74,16 @@ public class TestLambda2 {
 //        Comparator<Integer> com = Comparator.comparingInt(x -> x);
     }
 
+
+    //需求：对一个数进行运算
+    @Test
+    public void test5(){
+        MyFun myFun = x -> x * x
+
+    }
+
+    public Integer operation(Integer num, MyFun<Integer> mf){
+        return mf.getValue(num);
+    }
+
 }

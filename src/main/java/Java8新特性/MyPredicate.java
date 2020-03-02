@@ -6,5 +6,5 @@ package Java8新特性;
 @FunctionalInterface
 public interface MyPredicate<T> {
 
-    public boolean test(T t);
+    boolean test(T t);
 }
