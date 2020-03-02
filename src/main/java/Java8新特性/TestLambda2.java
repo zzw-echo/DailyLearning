@@ -17,6 +17,9 @@ import java.util.function.Consumer;
  *      () -> System.out.println("hello Lambda! ")
  *
  * 语法格式二：有一个参数，并且无返回值
+ *      (x) -> System.out.println("hello Lambda2!")
+ *
+ * 语法格式三：
  *
  */
 public class TestLambda2 {
