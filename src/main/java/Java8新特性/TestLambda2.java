@@ -2,6 +2,8 @@ package Java8新特性;
 
 import org.junit.Test;
 
+import java.util.function.Consumer;
+
 /**
  * Created by zhangzewen on 2020/3/1
  *
@@ -13,6 +15,8 @@ import org.junit.Test;
  *
  * 语法格式一：无参数，无返回值
  *      () -> System.out.println("hello Lambda! ")
+ *
+ * 语法格式二：有一个参数，并且无返回值
  *
  */
 public class TestLambda2 {
@@ -26,9 +30,17 @@ public class TestLambda2 {
             }
         };
 
+        runnable.run();
         System.out.println("---------------------");
 
         Runnable runnable1 = () -> System.out.println("hello Lambda! 1  ");
+        runnable1.run();
+    }
+
+    @Test
+    public void test2(){
+        Consumer consumer = x -> System.out.println(x);
+        consumer.accept("666");
     }
 
 }
