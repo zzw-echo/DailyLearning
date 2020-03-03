@@ -119,6 +119,9 @@ public class TestLambda2 {
                 return Integer.compare(e1.getAge(), e2.getAge());
             }
         });
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
     }
 
 }
