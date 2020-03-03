@@ -77,12 +77,24 @@ public class TestLambda2 {
 
     //需求：对一个数进行运算
     @Test
-    public void test5(){
-        MyFun myFun = x -> x * x
+    public void test5() {
+        MyFun<Integer> myFun = (x) -> {
+            int i = x + x;
+            return i;
+        };
+
+        Integer op1 = operation(100, new MyFun<Integer>() {
+            @Override
+            public Integer getValue(Integer integer) {
+                return integer * integer;
+            }
+        });
+
+        Integer op2 = operation(100, x -> x * x);
 
     }
 
-    public Integer operation(Integer num, MyFun<Integer> mf){
+    public Integer operation(Integer num, MyFun<Integer> mf) {
         return mf.getValue(num);
     }
 
