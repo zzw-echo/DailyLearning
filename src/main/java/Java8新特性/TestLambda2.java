@@ -144,4 +144,22 @@ public class TestLambda2 {
         return mf.getValue(str);
     }
 
+
+    //需求：对两个Long 类型进行处理
+
+    @Test
+    public void test13() {
+        op(100L, 200L, (l1, l2) -> {
+            return l1 + l2;
+        });
+
+        op(100L, 200L, (l1, l2) -> l1 * l2);
+
+    }
+
+    public void op(Long l1, Long l2, MyFun030302<Long, Long> mf) {
+        System.out.println(mf.getValue(l1, l2));
+    }
+
+
 }
