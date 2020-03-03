@@ -106,22 +106,42 @@ public class TestLambda2 {
             new Employee("张三", 18, 111.11),
             new Employee("李四", 35, 222.22),
             new Employee("王五", 36, 333.33),
-            new Employee("赵六", 45, 444.44),
+            new Employee("赵六", 22, 444.44),
             new Employee("田七", 66, 555.55)
     );
 
     @Test
-    public void test11(){
-        Collections.sort(employees, (e1, e2)->{
-            if (e1.getAge() == e2.getAge()){
+    public void test11() {
+        Collections.sort(employees, (e1, e2) -> {
+            if (e1.getAge() == e2.getAge()) {
                 return e1.getName().compareTo(e2.getName());
-            }else {
+            } else {
                 return Integer.compare(e1.getAge(), e2.getAge());
             }
         });
         for (Employee employee : employees) {
             System.out.println(employee);
         }
+    }
+
+
+    //需求：字符串变大写
+    @Test
+    public void test12() {
+        String s1 = strHandler("/t/t/t  去除  空格 ", str -> str.trim());
+        System.out.println(s1);
+
+
+        String s2 = strHandler("abcdef", str -> str.toUpperCase());
+        System.out.println(s2);
+
+        String s3 = strHandler("/t/t/t  去除  空格 ", str -> str.substring(2, 5));
+        System.out.println(s3);
+    }
+
+
+    public String strHandler(String str, MyFun030301 mf) {
+        return mf.getValue(str);
     }
 
 }
