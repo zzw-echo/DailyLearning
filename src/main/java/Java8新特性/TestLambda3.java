@@ -68,6 +68,9 @@ public class TestLambda3 {
     public void test3() {
         String newStr = strHandler("\t\t\t  去除  空格", (str) -> str.trim());
         System.out.println(newStr);
+
+        String subStr = strHandler("这是截取前的原字符串", (str) -> str.substring(2, 5));
+        System.out.println(subStr);
     }
 
 
