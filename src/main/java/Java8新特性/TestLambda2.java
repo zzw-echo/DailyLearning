@@ -2,7 +2,10 @@ package Java8新特性;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.function.Consumer;
 
 /**
@@ -82,6 +85,7 @@ public class TestLambda2 {
             int i = x + x;
             return i;
         };
+        myFun.getValue(100);
 
         Integer op1 = operation(100, new MyFun<Integer>() {
             @Override
@@ -96,6 +100,25 @@ public class TestLambda2 {
 
     public Integer operation(Integer num, MyFun<Integer> mf) {
         return mf.getValue(num);
+    }
+
+    List<Employee> employees = Arrays.asList(
+            new Employee("张三", 18, 111.11),
+            new Employee("李四", 35, 222.22),
+            new Employee("王五", 36, 333.33),
+            new Employee("赵六", 45, 444.44),
+            new Employee("田七", 66, 555.55)
+    );
+
+    @Test
+    public void test11(){
+        Collections.sort(employees, (e1, e2)->{
+            if (e1.getAge() == e2.getAge()){
+                return e1.getName().compareTo(e2.getName());
+            }else {
+                return Integer.compare(e1.getAge(), e2.getAge());
+            }
+        });
     }
 
 }
