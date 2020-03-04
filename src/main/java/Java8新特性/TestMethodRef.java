@@ -32,9 +32,10 @@ public class TestMethodRef {
 
         Consumer<String> con3 = System.out::println;
         con3.accept("111aaa");
-
-
     }
+
+    @Test
+    public
 
 
 
