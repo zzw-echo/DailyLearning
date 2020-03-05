@@ -35,7 +35,7 @@ public class TestMethodRef {
     }
 
     @Test
-    public
+    public void test2
 
 
 
