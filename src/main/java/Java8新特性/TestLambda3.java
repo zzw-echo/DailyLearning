@@ -22,9 +22,9 @@ import java.util.function.Supplier;
  * T get();
  * <p>
  * Function(T, R): 函数型接口
- * R apply(T t);
+ * R apply<T t>;
  * <p>
- * Predicate(T): 断言型接口
+ * Predicate<T>: 断言型接口
  * boolean test(T t);
  */
 public class TestLambda3 {
