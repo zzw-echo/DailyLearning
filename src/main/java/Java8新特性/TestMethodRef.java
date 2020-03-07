@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.io.PrintStream;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 /**
  * Created by zhangzewen on 2020/3/4
@@ -35,7 +36,18 @@ public class TestMethodRef {
     }
 
     @Test
-    public void test2
+    public void test2(){
+        Employee emp = new Employee();
+        Supplier<String> sup = () ->emp.getName();
+        String str = sup.get();
+        System.out.println(str);
+
+        Supplier<Integer> sup2 = emp::getAge;
+        Integer age = sup2.get();
+        System.out.println(age);
+
+
+    }
 
 
 
