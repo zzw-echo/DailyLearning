@@ -53,6 +53,14 @@ public class TestMethodRef {
         Comparator<Integer> com = (x, y) -> Integer.compare(x, y);
         Comparator<Integer> com1 = Integer::compare;
 
+        Comparator<Integer> com2 = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return Integer.compare(o1, o2);
+            }
+        };
+
+        Comparator<Integer> com3 = new MyCom1();
 
 
     }
