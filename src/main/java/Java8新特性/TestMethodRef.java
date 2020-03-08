@@ -61,8 +61,6 @@ public class TestMethodRef {
         };
 
         Comparator<Integer> com3 = new MyCom1();
-
-
     }
 
 
