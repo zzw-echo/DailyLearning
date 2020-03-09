@@ -16,6 +16,9 @@ public class TestStreamAPI2 {
             new Employee("李四", 35, 222.22),
             new Employee("王五", 36, 333.33),
             new Employee("赵六", 45, 444.44),
+            new Employee("田七", 66, 555.55),
+            new Employee("田七", 66, 555.55),
+            new Employee("田七", 66, 555.55),
             new Employee("田七", 66, 555.55)
     );
 
@@ -47,6 +50,11 @@ public class TestStreamAPI2 {
     @Test
     public void test3(){
         employees.stream().filter(e->e.getSalary()>300).skip(2).forEach(System.out::println);
+    }
+
+    @Test
+    public void test4(){
+        employees.stream().filter(e->e.getSalary()>300).distinct().forEach(System.out::println);
     }
 
 }
