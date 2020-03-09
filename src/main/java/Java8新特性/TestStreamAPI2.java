@@ -43,19 +43,25 @@ public class TestStreamAPI2 {
     }
 
     @Test
-    public void test2(){
-        employees.stream().filter(e->e.getSalary()>300).limit(2).forEach(System.out::println);
+    public void test2() {
+        employees.stream().filter(e -> e.getSalary() > 300).limit(2).forEach(System.out::println);
     }
 
     @Test
-    public void test3(){
-        employees.stream().filter(e->e.getSalary()>300).skip(2).forEach(System.out::println);
+    public void test3() {
+        employees.stream().filter(e -> e.getSalary() > 300).skip(2).forEach(System.out::println);
     }
 
     @Test
-    public void test4(){
-        employees.stream().filter(e->e.getSalary()>300).distinct().forEach(System.out::println);
+    public void test4() {
+        employees.stream().filter(e -> e.getSalary() > 300).distinct().forEach(System.out::println);
     }
+
+    /*
+        映射
+        map
+        flatMap
+     */
 
 }
 
