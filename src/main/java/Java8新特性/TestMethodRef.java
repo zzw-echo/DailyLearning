@@ -63,6 +63,17 @@ public class TestMethodRef {
         Comparator<Integer> com3 = new MyCom1();
     }
 
+    //构造器引用
+    //ClassName::new
+    @Test
+    public void test4(){
+        Supplier<Employee> sup = ()->new Employee();
+        Employee emp = sup.get();
+
+        Supplier<Employee> sup2 = Employee::new;
+        Employee emp2 = sup2.get();
+    }
+
 
 }
 
