@@ -44,6 +44,11 @@ public class TestStreamAPI2 {
         employees.stream().filter(e->e.getSalary()>300).limit(2).forEach(System.out::println);
     }
 
+    @Test
+    public void test3(){
+        employees.stream().filter(e->e.getSalary()>300).skip(2).forEach(System.out::println);
+    }
+
 }
 
 
