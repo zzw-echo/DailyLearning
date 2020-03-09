@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.io.PrintStream;
 import java.util.Comparator;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
@@ -66,14 +67,25 @@ public class TestMethodRef {
     //构造器引用
     //ClassName::new
     @Test
-    public void test4(){
-        Supplier<Employee> sup = ()->new Employee();
+    public void test4() {
+        Supplier<Employee> sup = () -> new Employee();
         Employee emp = sup.get();
 
         Supplier<Employee> sup2 = Employee::new;
         Employee emp2 = sup2.get();
     }
 
+    @Test
+    public void test5() {
+        Function<Integer, Employee> fun = x -> new Employee(x);
+
+        Function<String, Employee> fun1 = Employee::new;
+
+        Employee emp1 = fun.apply(101);
+        Employee emp2 = fun1.apply("sdsdsd");
+        System.out.println(emp1 + "=======" + emp2);
+
+    }
 
 }
 
