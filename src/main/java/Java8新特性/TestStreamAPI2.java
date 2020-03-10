@@ -72,9 +72,19 @@ public class TestStreamAPI2 {
         System.out.println("-----------");
 
         employees.stream().map(Employee::getName).forEach(System.out::println);
+
+        System.out.println("---------------");
+
+        Stream<Stream<Character>> streamStream = list.stream().map(TestStreamAPI2::filterCharacter);
+        streamStream.forEach(sm -> {
+            sm.forEach(System.out::println);
+        });
+
     }
 
-    public Stream<Character> filterCharacter(String str){
+
+
+    public static Stream<Character> filterCharacter(String str){
         List<Character> list = new ArrayList<>();
         for (char c : str.toCharArray()) {
             list.add(c);
