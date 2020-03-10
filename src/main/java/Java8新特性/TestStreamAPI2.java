@@ -80,6 +80,8 @@ public class TestStreamAPI2 {
             sm.forEach(System.out::println);
         });
 
+        list.stream().flatMap(TestStreamAPI2::filterCharacter).forEach(System.out::println);
+
     }
 
 
@@ -91,6 +93,27 @@ public class TestStreamAPI2 {
         }
         return list.stream();
     }
+
+    /*
+        排序
+        sorted() 自然排序
+        sorted(Comparator com) 定制排序
+     */
+    @Test
+    public void test6(){
+        Stream<Employee> sorted = employees.stream().sorted((e1, e2) -> {
+            if (e1.getAge().equals(e2.getAge())) {
+                return e1.getName().compareTo(e2.getName());
+            } else {
+                return -e1.getAge().compareTo(e2.getAge());
+            }
+        });
+
+        sorted.forEach(System.out::println);
+    }
+
+
+
 
 }
 
