@@ -56,6 +56,22 @@ public class StreamAPI3 {
 
     }
 
+    @Test
+    public void test2(){
+        long count = employees.stream().count();
+        System.out.println(count);
+
+        Optional<Employee> optional = employees.stream()
+                .max(Comparator.comparingDouble(Employee::getSalary));
+        System.out.println(optional.get());
+
+        Optional<Double> optional1 = employees.stream().map(Employee::getSalary)
+                .min(Double::compareTo);
+        System.out.println(optional1.get());
+
+    }
+
+
 
 
 
