@@ -2,6 +2,7 @@ package Java8新特性;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
@@ -62,6 +63,24 @@ public class TestStreamAPI2 {
         map
         flatMap
      */
+    @Test
+    public void test5(){
+        List<String> list = Arrays.asList("aaA","bbb","ccc");
+
+        list.stream().map(str->str.toUpperCase()).forEach(System.out::println);
+
+        System.out.println("-----------");
+
+        employees.stream().map(Employee::getName).forEach(System.out::println);
+    }
+
+    public Stream<Character> filterCharacter(String str){
+        List<Character> list = new ArrayList<>();
+        for (char c : str.toCharArray()) {
+            list.add(c);
+        }
+        return list.stream();
+    }
 
 }
 
