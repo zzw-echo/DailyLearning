@@ -167,8 +167,31 @@ public class StreamAPI3 {
             System.out.println(entry.getKey()+"=-="+entry.getValue());
         }
 
-
     }
+
+
+    //多级分组
+    @Test
+    public void test7(){
+        Map<Employee.Status, Map<String, List<Employee>>> map = employees.stream()
+                .collect(Collectors
+                        .groupingBy(Employee::getStatus, Collectors.groupingBy(
+                                (e) -> {
+                                    if (e.getAge() <= 35) {
+                                        return "青年";
+                                    } else if (e.getAge() <= 50) {
+                                        return "中年";
+                                    } else {
+                                        return "老年";
+                                    }
+                                }
+                        )));
+
+        System.out.println(map);
+    }
+
+
+
 
 
 }
