@@ -159,7 +159,11 @@ public class StreamAPI3 {
         Map<Employee.Status, List<Employee>> map = employees.stream()
                 .collect(Collectors.groupingBy(Employee::getStatus));
 
-        for (Map.Entry entry:map.entrySet()){
+//        for (Map.Entry entry:map.entrySet()){
+//            System.out.println(entry.getKey()+"=-="+entry.getValue());
+//        }
+
+        for (Map.Entry<Employee.Status, List<Employee>> entry : map.entrySet()) {
             System.out.println(entry.getKey()+"=-="+entry.getValue());
         }
 
