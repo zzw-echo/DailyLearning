@@ -211,6 +211,14 @@ public class StreamAPI3 {
         System.out.println(dss1);
     }
 
+    @Test
+    public void test10(){
+        String s = employees.stream()
+                .map(Employee::getName)
+                .collect(Collectors.joining());
+        System.out.println(s);
+    }
+
 
 
 
