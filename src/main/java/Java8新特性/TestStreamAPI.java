@@ -2,9 +2,11 @@ package Java8新特性;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 /**
  * Created by zhangzewen on 2020/3/11
@@ -40,6 +42,14 @@ public class TestStreamAPI {
         System.out.println(optional.get());
     }
 
+    public Stream<Character> filterCharacter(String str){
+        List<Character> list = new ArrayList<>();
+
+        for (char c : str.toCharArray()) {
+            list.add(c);
+        }
+        return list.stream();
+    }
 
 
 }
