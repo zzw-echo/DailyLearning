@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Created by zhangzewen on 2020/3/10
@@ -29,7 +30,7 @@ public class StreamAPI3 {
         查找与匹配
      */
     @Test
-    public void test1(){
+    public void test1() {
         boolean b = employees.stream().allMatch(e -> e.getStatus().equals(Employee.Status.BUSY));
         System.out.println(b);
 
@@ -41,7 +42,7 @@ public class StreamAPI3 {
         System.out.println(b2);
 
         employees.stream()
-                .sorted((e1,e2)->Double.compare(e1.getSalary(),e2.getSalary())).findFirst();
+                .sorted((e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary())).findFirst();
         Optional<Employee> optional = employees.stream()
                 .sorted(Comparator.comparingDouble(Employee::getSalary)).findFirst();
         System.out.println(optional.get());
@@ -57,7 +58,7 @@ public class StreamAPI3 {
     }
 
     @Test
-    public void test2(){
+    public void test2() {
         long count = employees.stream().count();
         System.out.println(count);
 
@@ -71,8 +72,37 @@ public class StreamAPI3 {
 
     }
 
+    @Test
+    public void test3() {
+        List<Integer> list = Arrays.asList(1, 2, 3);
 
+        Integer sum = list.stream()
+                .reduce(0, (x, y) -> x + y);
+        System.out.println(sum);
 
+        System.out.println("----------------");
+
+        Optional<Double> op = employees.stream()
+                .map(Employee::getSalary)
+                .reduce(Double::sum);
+        System.out.println(op.get());
+
+    }
+    /*
+        收集
+        collect
+     */
+    @Test
+    public void test4(){
+        List<String> list = employees.stream()
+                .map(Employee::getName)
+                .collect(Collectors.toList());
+
+        list.forEach(System.out::println);
+
+        System.out.println("---------------");
+
+    }
 
 
 }
