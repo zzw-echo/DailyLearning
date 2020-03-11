@@ -190,6 +190,15 @@ public class StreamAPI3 {
         System.out.println(map);
     }
 
+    //分区
+    @Test
+    public void test8(){
+        Map<Boolean, List<Employee>> map = employees.stream()
+                .collect(Collectors.partitioningBy(e -> e.getSalary() > 8000));
+
+        System.out.println(map);
+    }
+
 
 
 
