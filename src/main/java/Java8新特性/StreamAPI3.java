@@ -215,7 +215,7 @@ public class StreamAPI3 {
     public void test10(){
         String s = employees.stream()
                 .map(Employee::getName)
-                .collect(Collectors.joining());
+                .collect(Collectors.joining("，","---","==="));
         System.out.println(s);
     }
 
