@@ -199,6 +199,18 @@ public class StreamAPI3 {
         System.out.println(map);
     }
 
+    @Test
+    public void test9(){
+        DoubleSummaryStatistics dss = employees.stream()
+                .collect(Collectors.summarizingDouble(Employee::getSalary));
+
+        IntSummaryStatistics dss1 = employees.stream()
+                .collect(Collectors.summarizingInt(Employee::getAge));
+
+        System.out.println(dss);
+        System.out.println(dss1);
+    }
+
 
 
 
