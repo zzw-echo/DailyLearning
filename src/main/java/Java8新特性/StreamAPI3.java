@@ -2,10 +2,7 @@ package Java8新特性;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -101,6 +98,20 @@ public class StreamAPI3 {
         list.forEach(System.out::println);
 
         System.out.println("---------------");
+
+        Set<String> set = employees.stream()
+                .map(Employee::getName)
+                .collect(Collectors.toSet());
+        set.forEach(System.out::println);
+
+        System.out.println("-----------------");
+        HashSet<String> hashSet = employees.stream()
+                .map(Employee::getName)
+                .collect(Collectors.toCollection(HashSet::new));
+
+
+
+
 
     }
 
