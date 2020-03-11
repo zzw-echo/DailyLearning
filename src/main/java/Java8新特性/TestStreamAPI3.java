@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  * <p>
  * StreamAPI终止操作
  */
-public class StreamAPI3 {
+public class TestStreamAPI3 {
 
     List<Employee> employees = Arrays.asList(
             new Employee("张三", 18, 111.11, Employee.Status.BUSY),
