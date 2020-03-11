@@ -109,11 +109,72 @@ public class StreamAPI3 {
                 .map(Employee::getName)
                 .collect(Collectors.toCollection(HashSet::new));
 
+    }
 
+    @Test
+    public void test5(){
+        //总数
+        Long count = employees.stream()
+                .collect(Collectors.counting());
+        System.out.println(count);
 
+        System.out.println("-------------------");
+
+        //平均值
+        Double avg = employees.stream()
+                .collect(Collectors.averagingDouble(Employee::getSalary));
+        System.out.println(avg);
+
+        //总和
+        DoubleSummaryStatistics summaryStatistics = employees.stream()
+                .collect(Collectors.summarizingDouble(Employee::getSalary));
+
+        System.out.println(summaryStatistics.getSum());
+
+        Double sum = employees.stream()
+                .collect(Collectors.summingDouble(Employee::getSalary));
+
+        employees.stream().mapToDouble(Employee::getSalary).sum();
+
+        System.out.println(sum);
+
+        System.out.println("=================");
+
+        Optional<Employee> optional = employees.stream()
+                .collect(Collectors.maxBy((e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary())));
+        System.out.println(optional.get());
+
+        //最小值
+        Optional<Double> optional1 = employees.stream()
+                .map(Employee::getSalary)
+                .collect(Collectors.minBy(Double::compareTo));
+
+        System.out.println(optional1.get());
 
 
     }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
