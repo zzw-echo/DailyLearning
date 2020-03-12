@@ -2,6 +2,7 @@ package Java8新特性;
 
 import org.junit.Test;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
@@ -43,6 +44,9 @@ public class TestForkJoin {
         LongStream.rangeClosed(0,1000000000L)
                 .parallel()
                 .reduce(0, Long::sum);
+
+        Instant end = Instant.now();
+        System.out.println(Duration.between(start,end).toMillis());
     }
 
 }
