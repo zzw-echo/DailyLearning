@@ -2,8 +2,10 @@ package Java8新特性;
 
 import org.junit.Test;
 
+import java.time.Instant;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
+import java.util.stream.LongStream;
 
 /**
  * Created by zhangzewen on 2020/3/12
@@ -30,8 +32,17 @@ public class TestForkJoin {
             sum += i;
         }
         System.out.println(sum);
-
     }
 
+    /*
+        java8 并行流
+     */
+    @Test
+    public void test3(){
+        Instant start = Instant.now();
+        LongStream.rangeClosed(0,1000000000L)
+                .parallel()
+                .reduce(0, Long::sum);
+    }
 
 }
