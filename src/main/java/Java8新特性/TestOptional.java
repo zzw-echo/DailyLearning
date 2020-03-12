@@ -29,4 +29,12 @@ public class TestOptional {
         Optional<Object> op = Optional.ofNullable(null);
         System.out.println(op.get());
     }
+
+    @Test
+    public void test4(){
+        Optional<Object> op = Optional.ofNullable(null);
+        if (op.isPresent()){
+            op.get();
+        }
+    }
 }
