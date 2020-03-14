@@ -27,5 +27,4 @@ public class 网易_被3整除 {
     public static void main(String[] args) {
         divide(2, 5);
     }
-
 }
