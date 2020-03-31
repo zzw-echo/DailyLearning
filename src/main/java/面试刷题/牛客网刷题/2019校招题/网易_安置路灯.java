@@ -30,3 +30,4 @@ public class 网易_安置路灯 {
 //2020.03.27 今天看了Hadoop视频，大致学习了HDFS和MapReduce（需要尝试一个新的方法记笔记）
 //2020.03.28 今天学习Hadoop应用，MapReduce
 //2020.03.29 用MapReduce实现了计数操作
+//2020.03.31 数据的切片规则
