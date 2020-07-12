@@ -1,6 +1,6 @@
 ## DailyLearning
-记录日常学习，坚持coding
-  
+记录日常学习，坚持coding，每天打卡
+
 ---
 时间  |   目标
 ------|------  
@@ -14,6 +14,6 @@
 
 <img src="https://raw.githubusercontent.com/zzw-echo/DailyLearning/master/src/main/resources/images/WeChat001A.png" 
 width = "30%" alt="wechat">  
-  
+
 
 
