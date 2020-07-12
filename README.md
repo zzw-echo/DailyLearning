@@ -12,7 +12,7 @@
 
 ---
 
-<img src="https://raw.githubusercontent.com/zzw-echo/DailyLearning/master/src/main/resources/images/Wechat001A.png" 
+<img src="https://raw.githubusercontent.com/zzw-echo/DailyLearning/master/src/main/resources/images/WeChat001A.png" 
 width = "30%" alt="wechat">  
   
 
