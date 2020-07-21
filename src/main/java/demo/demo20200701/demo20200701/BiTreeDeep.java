@@ -20,12 +20,7 @@ public class BiTreeDeep {
     }
 
 
-    Node c = Node(4, null, null);
-    Node d = Node(1, b, e);
-    Node b = Node(2, null, c);
-    Node e = Node(3, null, f);
 
-    Node f = Node(5, null, null);
 
 
 }
