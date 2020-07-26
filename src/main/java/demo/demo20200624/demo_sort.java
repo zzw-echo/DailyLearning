@@ -1,3 +1,5 @@
+package demo20200624;
+
 import java.util.Scanner;
 
 public class demo_sort {
