@@ -3,7 +3,6 @@
  */
 public class QuickSort {
 
-    static int count;
 
     public static void QuickSort(int[] nums, int left, int right) {
 
@@ -28,7 +27,6 @@ public class QuickSort {
         }
         nums[left] = nums[i];
         nums[i] = key;
-        count++;
         QuickSort(nums, left, i - 1);
         QuickSort(nums, i + 1, right);
 
