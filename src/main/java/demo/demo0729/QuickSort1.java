@@ -3,68 +3,54 @@
  */
 public class QuickSort1 {
 
-    private static void QuickSort(int[] nums, int left, int right){
+    private static void QuickSort(int[] arr, int start, int end) {
 
-        if (left >= right){
-            return;
-        }
-        int key = nums[left];
+        if (start >= end) return;
 
-        int i = left;
-        int j = right;
+        int key = arr[start];
+        int i = start;
+        int j = end;
 
-        while (i<j){
-            while (nums[j] >= key && i<j){
+        while (i < j) {
+            while (i < j && arr[j] >= key) {
                 j--;
             }
-            while (nums[i] <= key && i<j){
+            if (i >= j) {
+                break;
+            } else {
+                arr[i] = arr[j];
                 i++;
             }
-            if (i<j){
-                nums[i] = nums[i] ^ nums[j];
-                nums[j] = nums[i] ^ nums[j];
-                nums[i] = nums[i] ^ nums[j];
+            while (i < j && arr[i] <= key) {
+                i++;
+            }
+            if (i >= j) {
+                break;
+            } else {
+                arr[j] = arr[i];
+                j--;
             }
         }
-        nums[i] = nums[i] ^ nums[left];
-        nums[left] = nums[i] ^ nums[left];
-        nums[i] = nums[i] ^ nums[left];
-
-        QuickSort(nums, left, i-1);
-        QuickSort(nums, i+1, right);
+        arr[i] = key;
+        QuickSort(arr, start, i - 1);
+        QuickSort(arr, i + 1, end);
 
     }
 
+
     public static void main(String[] args) {
-        int[] nums = {3,5,6,7,9,1,11,2};
-        for (int num : nums){
+        int[] nums = {3, 5, 2, 2, 6, 7, 2, 9, 1, 11, 2};
+        for (int num : nums) {
             System.out.print(num + "\t");
         }
         System.out.println();
 
-        QuickSort(nums,0, nums.length-1);
-        for (int num : nums){
+        QuickSort(nums, 0, nums.length - 1);
+
+        for (int num : nums) {
             System.out.print(num + "\t");
         }
 
     }
 
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

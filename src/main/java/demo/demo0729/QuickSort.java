@@ -3,50 +3,50 @@
  */
 public class QuickSort {
 
+    private static void QuickSort(int[] arr, int left, int right) {
 
-    public static void QuickSort(int[] nums, int left, int right) {
+        if (left >= right) return;
 
-        if (left >= right) {
-            return;
-        }
-        int key = nums[left];
+        int key = arr[left];
         int i = left;
         int j = right;
+
         while (i < j) {
-            while (nums[j] >= key && i < j) {
+            while (i < j && key <= arr[j]) {
                 j--;
             }
-            while (nums[i] <= key && i < j) {
+
+            arr[i] = arr[j];
+            i++;
+
+            while (i < j && key >= arr[i]) {
                 i++;
             }
-            if (i < j) {
-                nums[i] = nums[i] ^ nums[j];
-                nums[j] = nums[i] ^ nums[j];
-                nums[i] = nums[i] ^ nums[j];
-            }
+
+            arr[j] = arr[i];
+            j--;
+
         }
-        nums[left] = nums[i];
-        nums[i] = key;
-        QuickSort(nums, left, i - 1);
-        QuickSort(nums, i + 1, right);
-
+        arr[i] = key;
+        QuickSort(arr, left, i - 1);
+        QuickSort(arr, i + 1, right);
     }
-
 
     public static void main(String[] args) {
-        int[] nums = {3, 45, 78, 65, 54, 11, 64, 55, 11, 18};    //快排、选排、希尔、堆排 不稳定
-        for (int a : nums) {
-            System.out.print(a + "\t");
+        int[] nums = {3, 5, 2, 2, 6, 7, 2, 9, 1, 11, 2};
+        for (int num : nums) {
+            System.out.print(num + "\t");
         }
-
         System.out.println();
 
-        QuickSort(nums, 0, nums.length-1);
-        for (int a : nums) {
-            System.out.print(a + "\t");
+        QuickSort(nums, 0, nums.length - 1);
+
+        for (int num : nums) {
+            System.out.print(num + "\t");
         }
 
     }
+
 
 }
 
