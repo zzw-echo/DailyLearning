@@ -15,17 +15,13 @@ public class QuickSort {
             while (i < j && key <= arr[j]) {
                 j--;
             }
-
             arr[i] = arr[j];
             i++;
-
             while (i < j && key >= arr[i]) {
                 i++;
             }
-
             arr[j] = arr[i];
             j--;
-
         }
         arr[i] = key;
         QuickSort(arr, left, i - 1);
