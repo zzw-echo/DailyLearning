@@ -1,12 +1,45 @@
 package demo.demo0730;
 
+import java.util.Random;
+
 /**
  * Created by zhangzewen on 2020/7/30
  */
 public class QuickSort1 {
 
+    private static void swap(int[] arr, int start, int end) {
+//        arr[start] = arr[start] ^ arr[end];
+//        arr[end] = arr[start] ^ arr[end];
+//        arr[start] = arr[start] ^ arr[end];
+
+//        arr[start]^= arr[end] ^= arr[start] ^= arr[end];
+
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+    }
+
+    private static void randomChoice(int[] arr, int start, int end) {
+        Random random = new Random();
+        int ranNum = random.nextInt(end - start + 1) + start;
+        swap(arr, start, ranNum);
+    }
+
+    private static void midTree(int[] arr, int start, int end) {
+        int mid = (start + end) / 2;
+        if (arr[start] > arr[end]) swap(arr, start, end);
+        if (arr[mid] > arr[end]) swap(arr, start, end);
+        if (arr[mid] > arr[start]) swap(arr, start, mid);
+    }
+
+
+    //随机选取基准值==============================
     private static void QuickSort(int[] arr, int start, int end) {
         if (start >= end) return;
+
+//        randomChoice(arr,start,end);
+        midTree(arr, start, end);
+
 
         int key = arr[start];
         int i = start;
