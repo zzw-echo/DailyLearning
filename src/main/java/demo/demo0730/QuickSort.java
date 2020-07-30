@@ -14,7 +14,7 @@ public class QuickSort {
         int j = end;
 
         while (i < j) {
-            while (i < j && key <= arr[end]) {
+            while (i < j && key <= arr[j]) {
                 j--;
             }
             if (i >= j) {
@@ -23,7 +23,7 @@ public class QuickSort {
                 arr[i] = arr[j];
                 i++;
             }
-            while (i < j && key >= arr[start]) {
+            while (i < j && key >= arr[i]) {
                 i++;
             }
             if (i >= j) {
