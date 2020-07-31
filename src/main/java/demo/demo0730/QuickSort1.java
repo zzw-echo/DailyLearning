@@ -28,7 +28,7 @@ public class QuickSort1 {
     private static void midTree(int[] arr, int start, int end) {
         int mid = (start + end) / 2;
         if (arr[start] > arr[end]) swap(arr, start, end);
-        if (arr[mid] > arr[end]) swap(arr, start, end);
+        if (arr[mid] > arr[end]) swap(arr, mid, end);
         if (arr[mid] > arr[start]) swap(arr, start, mid);
     }
 
