@@ -2,8 +2,9 @@ package demo.demo0802;
 
 public class QuickSort {
 
-    private static void quickSort(int[] arr, int low, int high) {
-        if (low >= high) return;
+    private static int partition(int[] arr, int low, int high) {
+        if (low >= high) return -1;
+
         int key = arr[low];
         int i = low;
         int j = high;
@@ -28,8 +29,25 @@ public class QuickSort {
             }
         }
         arr[i] = key;
-        quickSort(arr, low, i - 1);
-        quickSort(arr, i + 1, high);
+        return i;
+    }
+
+    private static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int key = partition(arr, low, high);
+            quickSort(arr, low, key - 1);
+            quickSort(arr, key + 1, high);
+        }
+    }
+
+    //尾递归
+    private static void quickSort2(int[] arr, int low, int high) {
+        int key;
+        while (low < high) {
+            key = partition(arr, low, high);
+            quickSort2(arr, low, key - 1);
+            low = key + 1;
+        }
     }
 
     public static void main(String[] args) {
