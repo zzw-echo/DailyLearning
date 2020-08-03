@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class 猿辅导_重复课程问题 {
     public static void main(String[] args) {
 
+        //start 键盘输入================================================================
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
@@ -17,6 +18,7 @@ public class 猿辅导_重复课程问题 {
             start[i] = sc.nextInt();
             end[i] = sc.nextInt();
         }
+        //end 键盘输入================================================================
 
         Arrays.sort(start);
         Arrays.sort(end);

@@ -18,7 +18,6 @@ public class QuickSort {
             } else {
                 arr[i] = arr[j];
             }
-
             while (i < j && key >= arr[i]) {
                 i++;
             }

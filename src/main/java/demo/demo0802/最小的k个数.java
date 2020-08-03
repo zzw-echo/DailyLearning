@@ -35,6 +35,9 @@ public class 最小的k个数 {
 
     public static void main(String[] args) {
         int[] arr = {4, 5, 1, 6, 2, 7, 3, 8, 9, 9, 1};
+
+
+
         ArrayList<Integer> result = GetLeastNum(arr, 4);
         System.out.println(result);
     }
