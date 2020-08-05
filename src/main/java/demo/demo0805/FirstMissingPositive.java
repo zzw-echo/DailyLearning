@@ -17,7 +17,7 @@ public class FirstMissingPositive {
 
 
     public int firstMissingPositive(int[] nums) {
-/*        int len = nums.length;
+        int len = nums.length;
         for (int i = 0; i < len; i++) {
             while (nums[i] > 0 && nums[i] <= len && nums[i] != i + 1) {
                 int temp = nums[i];
@@ -30,11 +30,11 @@ public class FirstMissingPositive {
                 return i + 1;
             }
         }
-        return len+1;*/
+        return len+1;
 
         //nums[i] = x < n   nums[x-1] = -nums[x-1]  负数就是存在，最小非负
 
-        int n = nums.length;
+       /* int n = nums.length;
         for (int i = 0; i < n; i++) {
             if (nums[i] <= 0) nums[i] = n + 1;
         }
@@ -49,7 +49,7 @@ public class FirstMissingPositive {
                 return i+1;
             }
         }
-        return n+1;
+        return n+1;*/
 
 
     }
