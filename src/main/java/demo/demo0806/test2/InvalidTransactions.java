@@ -1,35 +1,36 @@
-package demo.demo0806.shopee;
+package demo.demo0806.test2;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @ Author     ：zhangzewen
- * @ Date       ：Created in 2020/8/6 12:46
+ * @ Date       ：Created in 2020/8/6 14:45
  * @ Description：
  */
 public class InvalidTransactions {
 
+
     public String[] invalidTransaction(String[] vTransaction) {
+
         int len = vTransaction.length;
 
-        Transaction[] trans = new Transaction[len];
+        Transaction[] transactions = new Transaction[len];
+
 
         for (int i = 0; i < len; i++) {
-            String tran = vTransaction[i];
-            String[] strings = tran.split(",");
-            trans[i] = new Transaction(strings[0], Integer.parseInt(strings[1]), Integer.parseInt(strings[2]), strings[3]);
+            String[] strings = vTransaction[i].split(",");
+            transactions[i] = new Transaction(strings[0], Integer.parseInt(strings[1]), Integer.parseInt(strings[2]), strings[3]);
         }
 
         ArrayList<String> list = new ArrayList<>();
 
         for (int i = 0; i < len; i++) {
-            if (trans[i].money > 1000){
+            if (transactions[i].money > 1000) {
                 list.add(vTransaction[i]);
-            }else{
+            } else {
                 for (int j = 0; j < len; j++) {
-                    if (i != j && trans[i].name.equals(trans[j].name) && !trans[i].city.equals(trans[j].city)
-                    && Math.abs(trans[i].time - trans[j].time) <= 60){
+                    if (transactions[i].name.equals(transactions[j].name) && !transactions[i].city.equals(transactions[j].city)
+                            && Math.abs(transactions[i].time - transactions[j].time) <= 60) {
                         list.add(vTransaction[i]);
                         break;
                     }
@@ -39,8 +40,8 @@ public class InvalidTransactions {
 
         String[] result = list.toArray(new String[list.size()]);
         return result;
-    }
 
+    }
 
     private class Transaction {
         String name;
