@@ -1,0 +1,60 @@
+package demo.demo0813;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 作者 ： zhangzewen
+ * 邮箱 ： zzw.me@qq.com
+ * 时间 ： 2020/8/13 19:30
+ * 描述 ：
+ */
+public class demo1 {
+
+    public boolean Game24Points(int[] arr) {
+        // write code here
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            list.add(arr[i]);
+        }
+        return fun(list);
+    }
+
+    private static boolean fun(List<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            int temp = list.get(i);
+            list.remove(i);
+            if (getResult(list, temp)) {
+                return true;
+            }
+            list.add(i, temp);
+        }
+        return false;
+    }
+
+    private static boolean getResult(List<Integer> list, int temp) {
+        if (list.size() > 0) {
+            for (int i = 0; i < list.size(); i++) {
+                int n = list.get(i);
+                list.remove(i);
+                if (getResult(list, temp * n) || getResult(list, temp + n) || getResult(list, temp - n)) {
+                    return true;
+                } else if (temp % n == 0) {
+                    if (getResult(list, temp / n)) {
+                        return true;
+                    }
+                }
+                list.add(i, n);
+            }
+            return false;
+        } else {
+            if (temp == 24) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+}
