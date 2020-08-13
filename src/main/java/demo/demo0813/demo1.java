@@ -1,7 +1,5 @@
 package demo.demo0813;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,16 +11,12 @@ import java.util.List;
  */
 public class demo1 {
 
+
     public boolean Game24Points(int[] arr) {
-        // write code here
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);
         }
-        return fun(list);
-    }
-
-    private static boolean fun(List<Integer> list) {
         for (int i = 0; i < list.size(); i++) {
             int temp = list.get(i);
             list.remove(i);
