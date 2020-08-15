@@ -1,6 +1,7 @@
 package demo.demo0813;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -11,8 +12,37 @@ import java.util.List;
  */
 public class demo1 {
 
+    public static void main(String[] args) {
+/*        ArrayList<Integer> list = new ArrayList<>();
+        list.add(7);
+        list.add(2);
+        list.add(1);
+        list.add(10);
+        System.out.println(list.get(0));
+        System.out.println("size:" + list.size());
+        list.remove(0);
+        System.out.println(list.get(0));
+        System.out.println("size:" + list.size());
+        list.add(0,111);
+        System.out.println(list.get(0));
+        System.out.println("size:" + list.size());
+        HashSet<Double> doubles = new HashSet<>();
+        doubles.add(1.0);
+        doubles.add(3.0);
+        doubles.add(2.0);
 
-    public boolean Game24Points(int[] arr) {
+
+        int[] arr = {2,5,2,7};
+        System.out.println(Game24Points(arr));
+
+ */
+        float a = 1;
+        float b = 3;
+        System.out.println(a / b);
+
+    }
+
+    public static boolean Game24Points(int[] arr) {
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             list.add(arr[i]);

@@ -1,5 +1,7 @@
 package demo.demo0813;
 
+import java.io.File;
+
 /**
  * 作者 ： zhangzewen
  * 邮箱 ： zzw.me@qq.com
@@ -20,6 +22,9 @@ public class demo4 {
         n %= 4;
         s += n;
         return s;
+    }
+
+    public static void main(String[] args) {
     }
 
 }
