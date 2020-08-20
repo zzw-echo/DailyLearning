@@ -1,4 +1,4 @@
-package demo.draft.demo0807.test1.Singleton3;
+package demo.bedoreH.demo0807.test1.Singleton3;
 
 /**
  * @ Author     ：zhangzewen

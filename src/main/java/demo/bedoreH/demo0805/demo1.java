@@ -1,4 +1,4 @@
-package demo.draft.demo0805;
+package demo.bedoreH.demo0805;
 
 import java.util.Scanner;
 

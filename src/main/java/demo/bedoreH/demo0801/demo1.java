@@ -1,4 +1,4 @@
-package demo.draft.demo0801;
+package demo.bedoreH.demo0801;
 
 public class demo1 {
     public static void main(String[] args) {

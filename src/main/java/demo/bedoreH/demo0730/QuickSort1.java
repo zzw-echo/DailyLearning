@@ -1,4 +1,4 @@
-package demo.draft.demo0730;
+package demo.bedoreH.demo0730;
 
 import java.util.Random;
 
