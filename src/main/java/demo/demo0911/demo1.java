@@ -29,7 +29,6 @@ public class demo1 {
                 maxLen = tmp;
                 res = strs[i].substring(0, maxLen);
             }
-
         }
         return res;
     }
@@ -43,6 +42,4 @@ public class demo1 {
             i++;
         return i;
     }
-
-
 }
