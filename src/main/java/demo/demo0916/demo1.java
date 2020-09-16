@@ -27,7 +27,7 @@ public class demo1 {
 
     public static Integer[] deDup(Integer[] arr){
         HashSet<Integer> set = new HashSet<>(Arrays.asList(arr));
-        return set.toArray(new Integer[set.size()]);
+        return set.toArray(new Integer[0]);
     }
 
 }
