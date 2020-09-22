@@ -1,34 +1,29 @@
-package demo.bedoreH.demo0807.test2.Q;
+package demo.demo0922;
 
 /**
- * @ Author     ：zhangzewen
- * @ Date       ：Created in 2020/8/7 18:50
- * @ Description：快排
+ * 作者 ： 张泽文
+ * 邮箱 ： zzw.me@qq.com
+ * 时间 ： 2020/9/23 0:07
  */
-public class QuickSort {
+public class demo3 {
 
-    public static int partition(int[] arr, int low, int high) {
+    private static int partition(int[] arr, int low, int high) {
+        int key = arr[low];
         int i = low;
         int j = high;
 
-        int key = arr[low];
-
         while (i < j) {
-            while (i < j && key <= arr[j]) {
+            while (i < j && arr[j] >= key) {
                 j--;
             }
-            if (i >= j) {
-                break;
-            } else {
+            if (i < j) {
                 arr[i] = arr[j];
                 i++;
             }
-            while (i < j && key >= arr[i]) {
+            while (i < j && arr[i] <= key) {
                 i++;
             }
-            if (i >= j) {
-                break;
-            } else {
+            if (i < j) {
                 arr[j] = arr[i];
                 j--;
             }
@@ -38,14 +33,11 @@ public class QuickSort {
     }
 
     public static void quickSort(int[] arr, int low, int high) {
-        int k;
-
         if (low < high) {
-            k = partition(arr, low, high);
+            int k = partition(arr, low, high);
             quickSort(arr, low, k - 1);
             quickSort(arr, k + 1, high);
         }
-
     }
 
     public static void main(String[] args) {
@@ -56,5 +48,6 @@ public class QuickSort {
         }
     }
 
-    //插排、聚类、尾递归、多线程
+
+
 }
