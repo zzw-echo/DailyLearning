@@ -20,6 +20,7 @@ public class demo3 {
         }
         if (len == 3){
             System.out.println(1);
+            
             return;
         }
 
