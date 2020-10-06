@@ -5,9 +5,15 @@ package demo.demo1005.qs;
  * 邮箱 ： zzw.me@qq.com
  * 时间 ： 2020/10/5 10:40
  */
-public class quickSort {
+public class demo1 {
+
+    public demo1() {
+    }
+
+    static int a;
 
     private static int partition(int[] arr, int low, int high) {
+
         int key = arr[low];
 
         while (low < high) {
