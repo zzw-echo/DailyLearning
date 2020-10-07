@@ -22,10 +22,9 @@ public class demo1 {
     public static void main(String[] args) {
 
         double d1 = 0.1;
-        BigDecimal b1 = new BigDecimal(d1);
+        BigDecimal b1 = new BigDecimal(Double.toString(d1));
 
-        System.out.println(d1);
-        System.out.println(b1);
+
 
     }
 
